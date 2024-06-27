@@ -7,11 +7,8 @@ s.listen()
 print("esperando conexion")
 conn, addr = s.accept()
 
-data, addr = s.recv(1024)   
+data = conn.recv(1024)   
 
-s.sendall("Message for client".encode())
+conn.sendall("Message for client".encode())
 
-print("hola")
 print(data)
-
-s.close()
